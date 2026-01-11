@@ -1,37 +1,44 @@
 def hollow_square(n):
+    result = ""
 
     for row in range(n):
         for col in range(n):
             if row == 0 or row == n - 1 or col == 0 or col == n - 1:
-                print("*", end="")
+                result += "*"
             else:
-                print(" ", end="")
-        print()
+                result += " "
+        if row != n - 1:
+            result += "\n"
 
-print(hollow_square(5))
+    return result
 
 def number_pattern(n):
-     result = ""
-     for row in range(1, n):
+    result = ""
 
+    for row in range(1, n + 1):
         for col in range(1, row + 1):
-            print(col, end="")
+            result += str(col)
+        if row != n:
             result += "\n"
-        print()
-print(number_pattern(5))
+
+    return result
+
 
 # # Example: For n = 5, sum = 1 + 2 + 3 + 4 + 5 = 15
 def sum_of_natural_numbers(n):
-    for row in range(1, n):
-        print(row, end="")
+    total = 0
 
-        print()
-print(sum_of_natural_numbers(6))
+    for i in range(1, n + 1):
+        total += i
 
-# # Example for n = 4:
-# #    *
-# #   ***
-# #  *****
-# # *******
+    return total
 def centered_star_pyramid(n):
-    return ""
+    result = ""
+    for i in range(1, n + 1):
+        spaces = n - i
+        stars = 2 * i - 1
+        result += " " * spaces + "*" * stars
+        if i != n:
+            result += "\n"
+
+    return result
